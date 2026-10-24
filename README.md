@@ -1,42 +1,35 @@
-# 🧠 Deep Learning - Implementation & Optimization
+# 🧠 Deep Learning: Foundations & PyTorch Implementation
 
-Thư mục này chứa mã nguồn cài đặt các kiến trúc mạng nơ-ron nền tảng và thử nghiệm các thuật toán tối ưu hóa (Optimizers) trong Deep Learning sử dụng **PyTorch**.
-
----
-
-## 📌 Nội dung thực nghiệm (Notebooks)
-
-### 1. [MLP_code.ipynb](./MLP_code.ipynb)
-- **Kiến trúc:** Mạng nơ-ron truyền thẳng đa tầng (Multi-Layer Perceptron - MLP).
-- **Mục tiêu:** Cài đặt từ nền tảng quy trình huấn luyện mạng nơ-ron cho bài toán phân loại dữ liệu (Classification).
-- **Kỹ thuật chính:**
-  - Thiết kế các tầng kết nối đầy đủ (Fully Connected / Linear Layers) với `torch.nn.Linear`.
-  - Thực nghiệm các hàm kích hoạt phi tuyến tính (Activation Functions): ReLU, Sigmoid, Tanh.
-  - Xử lý lan truyền tiến (Forward Pass), tính toán hàm mất mát (Loss Function như Cross-Entropy Loss) và lan truyền ngược (Backpropagation) để cập nhật trọng số.
-  - Đánh giá độ chính xác (Accuracy) và theo dõi hiện tượng Overfitting qua từng epoch.
+Repository này lưu trữ tài liệu lý thuyết nền tảng và mã nguồn thực nghiệm các mô hình Học sâu (Deep Learning) từ cơ bản đến nâng cao sử dụng framework **PyTorch**.
 
 ---
 
-### 2. [Optimizer_code.ipynb](./Optimizer_code.ipynb)
-- **Chủ đề:** Các thuật toán tối ưu hóa (Optimization Algorithms) trong quá trình huấn luyện mô hình.
-- **Mục tiêu:** So sánh tốc độ hội tụ, độ ổn định và hiệu năng của các thuật toán Gradient Descent khác nhau.
-- **Kỹ thuật chính:**
-  - Cài đặt và thực nghiệm các thuật toán tối ưu:
-    - **SGD (Stochastic Gradient Descent):** Cập nhật trọng số theo từng mẫu/batch nhỏ.
-    - **SGD with Momentum:** Bổ sung quán tính giúp vượt qua các điểm cực tiểu địa phương (local minima) và vùng yên ngựa (saddle points).
-    - **RMSprop / AdaGrad:** Tự động điều chỉnh tốc độ học (adaptive learning rate) theo từng trọng số.
-    - **Adam (Adaptive Moment Estimation):** Kết hợp ưu điểm của Momentum và RMSprop, theo dõi gradient bậc 1 và bậc 2.
-  - Vẽ đồ thị so sánh đường cong suy giảm hàm mất mát (Loss Curve) giữa các Optimizer.
+## 📂 Cấu trúc Repository
+
+- **[Code/](./Code):** Chứa mã nguồn cài đặt mạng nơ-ron và thuật toán tối ưu (PyTorch).
+- **[Lý Thuyết/](./L%C3%BD%20Thuy%E1%BA%BFt):** Chứa ghi chép chi tiết về cơ sở toán học, kiến trúc mạng và lan truyền ngược.
 
 ---
 
-## 🛠️ Công nghệ & Thư viện sử dụng
+## 📌 Nội dung chi tiết các thư mục
+
+### 1. [Lý Thuyết - Cơ chế & Nền tảng](./L%C3%BD%20Thuy%E1%BA%BFt)
+Nghiên cứu nguyên lý toán học đằng sau các thành phần của mạng nơ-ron:
+- **Kiến trúc Mạng nơ-ron:** Bản chất perceptron, mô hình mạng truyền thẳng đa tầng (Multi-Layer Perceptron - MLP).
+- **Cơ chế Lan truyền:** Quá trình truyền tiến (Forward Pass), tính toán hàm mất mát (Loss functions như MSE, Cross-Entropy) và lan truyền ngược (Backpropagation) để cập nhật gradient.
+- **Hàm kích hoạt:** Khảo sát các hàm phi tuyến tính như ReLU, Sigmoid, Tanh và Softmax.
+- **Thuật toán Tối ưu hóa:** Cơ sở lý thuyết của Gradient Descent, cơ chế bổ sung quán tính (Momentum) và thích ứng tốc độ học (Adaptive Learning Rate trong Adam, RMSprop).
+
+### 2. [Code - Triển khai Thực nghiệm với PyTorch](./Code)
+Triển khai mã nguồn thực tế:
+- **MLP Implementation (`MLP_code.ipynb`):** Tự xây dựng pipeline huấn luyện mạng nơ-ron hoàn chỉnh với `torch.nn.Module`, thiết lập vòng lặp huấn luyện (training loop), theo dõi hàm mất mát và đánh giá độ chính xác (Accuracy).
+- **Optimizers Comparison (`Optimizer_code.ipynb`):** Cài đặt, đo lường và vẽ biểu đồ so sánh trực tiếp tốc độ hội tụ cũng như độ ổn định giữa các bộ tối ưu hóa (SGD, SGD with Momentum, RMSprop, Adam) trên cùng một bài toán.
+
+---
+
+## 🛠️ Công nghệ & Công cụ sử dụng
 
 - **Ngôn ngữ:** Python 3
 - **Thư viện Deep Learning:** PyTorch (`torch`, `torch.nn`, `torch.optim`)
-- **Phân tích & Hiển thị dữ liệu:** NumPy, Matplotlib, Seaborn
+- **Xử lý & Trực quan hóa dữ liệu:** NumPy, Matplotlib
 - **Môi trường thực thi:** Jupyter Notebook / Google Colab
-
----
-
-> 💡 *Phần lý thuyết chi tiết, công thức toán học và giải thích cơ chế của MLP cùng Optimizers được lưu trữ tại thư mục [../Lý Thuyết](../Lý%20Thuyết).*
